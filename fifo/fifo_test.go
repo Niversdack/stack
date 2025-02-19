@@ -1,4 +1,4 @@
-package stack
+package fifo
 
 import (
 	"math/rand"
