@@ -4,9 +4,10 @@ type Stack[t any] struct {
 	a []t
 }
 
-func NewStack[t any]() Stack[t] {
+func NewStack[t any](size int) Stack[t] {
+	s := make([]t, size)
 	return Stack[t]{
-		a: []t{},
+		a: s,
 	}
 }
 
@@ -31,4 +32,8 @@ func (s *Stack[t]) len() int {
 
 func (s *Stack[t]) Push(T t) {
 	s.a = append(s.a, T)
+}
+
+func (s *Stack[t]) GetStack() []t {
+	return s.a
 }
